@@ -1,0 +1,19 @@
+@import 'ag-grid-community/styles/ag-grid.css';
+@import 'ag-grid-community/styles/ag-theme-alpine.css';
+
+h1,
+p {
+  font-family: Lato;
+}
+
+.ag-cell,
+.ag-header-cell {
+  cursor: pointer;
+  border-right: 1px solid gray;
+  vertical-align: middle;
+}
+
+.ag-cell,
+.ag-header-group-cell {
+  border-right: 1px solid gray;
+}
