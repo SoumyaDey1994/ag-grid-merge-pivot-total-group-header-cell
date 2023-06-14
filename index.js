@@ -58,7 +58,7 @@ const App = () => {
 
   const onPivotResultGroup = (columnGroup) => {
     if (columnGroup.groupId.startsWith('PivotRowTotal_')) {
-      columnGroup.headerName = 'Summary';
+      columnGroup.headerName = 'Total';
     }
   };
   return (
