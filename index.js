@@ -2,8 +2,8 @@ import React, { useState, useCallback, useMemo } from 'react';
 import { createRoot } from 'react-dom/client';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-enterprise';
-import 'ag-grid-community/styles/ag-grid.css';
-import 'ag-grid-community/styles/ag-theme-alpine.css';
+import 'ag-grid-enterprise/dist/styles/ag-grid.css';
+import 'ag-grid-enterprise/dist/styles/ag-theme-alpine.css';
 
 const App = () => {
   const [columnDefs, setColumnDefs] = useState([
@@ -54,7 +54,7 @@ const App = () => {
       });
   }, []);
 
-  const onPivotResultGroup = (columnGroup) => {
+  const onProcessSecondaryColGroupDef = (columnGroup) => {
     if (columnGroup.groupId.startsWith('PivotRowTotal_')) {
       columnGroup.headerName = 'Summary';
     }
@@ -72,7 +72,7 @@ const App = () => {
         suppressAggFuncInHeader={true}
         pivotMode={true}
         pivotRowTotals="after"
-        processPivotResultColGroupDef={onPivotResultGroup}
+        processSecondaryColGroupDef={onProcessSecondaryColGroupDef}
       ></AgGridReact>
     </div>
   );
