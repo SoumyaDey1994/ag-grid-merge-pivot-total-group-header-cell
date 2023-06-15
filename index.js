@@ -44,17 +44,15 @@ const App = () => {
     };
   }, []);
 
-  const onGridReady = useCallback((params) => {
+  const onGridReady = useCallback(() => {
     fetch(
       'https://raw.githubusercontent.com/ag-grid/ag-grid/master/packages/ag-grid-docs/src/olympicWinners.json'
     )
       .then((response) => response.json())
       .then((data) => {
-        setTimeout(() => {
-          setRowData(data);
-        }, 10);
+        setRowData(data);
       });
-  });
+  }, []);
 
   const onPivotResultGroup = (columnGroup) => {
     if (columnGroup.groupId.startsWith('PivotRowTotal_')) {
